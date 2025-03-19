@@ -22,5 +22,12 @@ public class IndexPage {
         elementHelper.clickJSLocator(IndexLocators.alertsSubMenu);
     }
 
+    public void enterOnBrowserWindowSubmenu(){
+        elementHelper.clickJSLocator((IndexLocators.browserSubMenu));
+    }
+
+    public void enterOnFrameSubmenu(){
+        elementHelper.clickJSLocator(IndexLocators.frameSubMenu);
+    }
 
 }
