@@ -38,4 +38,12 @@ public class IndexPage {
         elementHelper.clickJSLocator(IndexLocators.practiceFormSubMenu);
     }
 
+    public void enterOnElementsMenu(){
+        elementHelper.clickJSLocator(IndexLocators.elementsMenu);
+    }
+
+    public void enterOnWebTablesSubMenu(){
+        elementHelper.clickJSLocator(IndexLocators.webTablesSubMenu);
+    }
+
 }
