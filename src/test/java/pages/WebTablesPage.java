@@ -62,8 +62,8 @@ public class WebTablesPage {
 
     public void verifyTableContent(int expectedSize, String firstNameValue, String lastNameValue, String userEmailValue,
                                    String ageValue, String salaryValue, String departmentValue){
-        List<WebElement> tablesRowsList = driver.findElements(tablesRowsListElement);
-        Assert.assertEquals(tablesRowsList.size(), 4, "Valoarea actuala a tabelului nu este 4");
+        List<WebElement> tablesRowsList = driver.findElements(tablesRowListElement);
+        Assert.assertEquals(tablesRowsList.size(), expectedSize, "Valoarea actuala a tabelului nu este 4");
         elementHelper.validateTextContainsElement(tablesRowsList.get(3),firstNameValue);
         elementHelper.validateTextContainsElement(tablesRowsList.get(3),lastNameValue);
         elementHelper.validateTextContainsElement(tablesRowsList.get(3),userEmailValue);

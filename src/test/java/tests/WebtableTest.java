@@ -43,7 +43,7 @@ public class WebtableTest extends SharedData {
         webTablesPage.fillDepartment(departmentValue);
         webTablesPage.submitClick();
 
-        webTablesPage.verifyTableContent(expectedSize);
+        webTablesPage.verifyTableContent(expectedSize, firstNameValue, lastNameValue, userEmailValue, ageValue, salaryValue, departmentValue);
 
         webTablesPage.editClick();
 
