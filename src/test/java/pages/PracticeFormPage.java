@@ -1,6 +1,7 @@
 package pages;
 
 import helpMethods.ElementHelper;
+import loggerUtility.LoggerUtility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -23,14 +24,17 @@ public class PracticeFormPage {
 
     public void fillFirstName(String firstNameValue) {
         elementHelper.fillLocator(firstNameElement, firstNameValue);
+        LoggerUtility.infoTest("The user fills first name field");
     }
 
     public void fillLastName(String lastNameValue) {
         elementHelper.fillLocator(lastNameElement, lastNameValue);
+        LoggerUtility.infoTest("The user fills last name field");
     }
 
     public void fillEmailValue(String emailValue) {
         elementHelper.fillLocator(emailElement, emailValue);
+        LoggerUtility.infoTest("The user fills email field");
     }
 
     public void fillGenderValue(String genderValue) {
@@ -44,10 +48,12 @@ public class PracticeFormPage {
         if (genderValue.equals("Other")) {
             elementHelper.clickJSLocator(genderOptionsList.get(2));
         }
+        LoggerUtility.infoTest("The user chooses gender");
     }
 
     public void fillMobilePhoneValue(String mobilePhoneValue) {
         elementHelper.fillLocator(mobilePhoneElement, mobilePhoneValue);
+        LoggerUtility.infoTest("The user fills mobile phone field");
     }
 
     public void fillSubjects(List<String> subjects) {
@@ -56,6 +62,7 @@ public class PracticeFormPage {
         for (int index = 0; index < subjects.size(); index++) {
             elementHelper.fillPressLocator(subjectsElement, subjects.get(index), Keys.ENTER);
         }
+        LoggerUtility.infoTest("The user fills the subjects");
     }
 
     public void fillHobbies(List<String> hobbies) {
@@ -67,29 +74,35 @@ public class PracticeFormPage {
             }
 
         }
+        LoggerUtility.infoTest("The user fills the hobbies");
     }
 
     public void pictureUpload(String path) {
         File file = new File(path);
         elementHelper.fillLocator(pictureElement, file.getAbsolutePath());
+        LoggerUtility.infoTest("The user uploads a picture");
     }
 
     public void fillCurrentAddress(String addressValue) {
         elementHelper.fillLocator(addressElement, addressValue);
+        LoggerUtility.infoTest("The user fills current address field");
     }
 
     public void fillState(String stateValue) {
         elementHelper.clickJSLocator(stateElement);
         elementHelper.fillPressLocator(stateInputElement, stateValue, Keys.ENTER);
+        LoggerUtility.infoTest("The user fills state field");
     }
 
     public void fillCity(String cityInputValue) {
         elementHelper.clickJSLocator(cityElement);
         elementHelper.fillPressLocator(cityInputElement, cityInputValue, Keys.ENTER);
+        LoggerUtility.infoTest("The user fills city field");
     }
 
     public void submitClick() {
         elementHelper.clickJSLocator(submitElement);
+        LoggerUtility.infoTest("The user submits the form");
     }
 
     public void validateThankYouMessage(String expectedMessage) {

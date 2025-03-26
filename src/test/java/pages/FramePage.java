@@ -2,6 +2,7 @@ package pages;
 
 import helpMethods.ElementHelper;
 import helpMethods.TabWindowHelper;
+import loggerUtility.LoggerUtility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,6 +24,7 @@ public class FramePage {
         tabWindowHelper.switchToSpecificTabWindow2("frame1");
         WebElement textElement = driver.findElement(FrameLocators.textElement);
         System.out.println(textElement.getText());
+        LoggerUtility.infoTest("The user switches to specific tab");
     }
 
     public void switchToParent(){
@@ -30,5 +32,6 @@ public class FramePage {
         driver.switchTo().frame("frame2");
         WebElement textElement2 = driver.findElement(FrameLocators.textElement);
         System.out.println(textElement2.getText());
+        LoggerUtility.infoTest("The user switches to tab parrent");
     }
 }

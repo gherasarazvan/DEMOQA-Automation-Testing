@@ -2,6 +2,7 @@ package pages;
 
 import helpMethods.ElementHelper;
 import helpMethods.TabWindowHelper;
+import loggerUtility.LoggerUtility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -29,6 +30,7 @@ public class BrowserWindowPage {
         System.out.println(driver.getCurrentUrl());
 
         tabWindowHelper.closeCurrentTabWindow();
+        LoggerUtility.infoTest("The user interacts with specific tab");
     }
 
     public void interactWithSpecificWindow() {
@@ -37,5 +39,6 @@ public class BrowserWindowPage {
         elementHelper.clickJSLocator(windowButtonElement);
 
         tabWindowHelper.switchToSpecificTabWindow(1);
+        LoggerUtility.infoTest("The user interacts with specific window");
     }
 }

@@ -2,6 +2,7 @@ package pages;
 
 import helpMethods.AlertHelper;
 import helpMethods.ElementHelper;
+import loggerUtility.LoggerUtility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pageLocators.AlertLocators;
@@ -22,20 +23,24 @@ public class AlertPage {
     public void interactWithAcceptAlert(){
         elementHelper.clickJSLocator(AlertLocators.alertOkElement);
         alertHelper.acceptAlert();
+        LoggerUtility.infoTest("The user accepts the alert");
     }
 
     public void interactWithTimerAlert(){
         elementHelper.clickJSLocator(AlertLocators.timerAlertElement);
         alertHelper.acceptAlert();
+        LoggerUtility.infoTest("The user accepts the timer alert");
     }
 
     public void interactWithCancelAlert(){
         elementHelper.clickJSLocator(AlertLocators.confirmButtonElement);
         alertHelper.cancelAlert();
+        LoggerUtility.infoTest("The user cancels the alert");
     }
 
     public void interactWithPromtAlert(String value){
         elementHelper.clickJSLocator(AlertLocators.promptButtonElement);
         alertHelper.fillAlert(value);
+        LoggerUtility.infoTest("The user fills the alert field and accept the alert");
     }
 }

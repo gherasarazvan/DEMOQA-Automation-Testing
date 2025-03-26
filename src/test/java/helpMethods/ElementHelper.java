@@ -76,6 +76,5 @@ public class ElementHelper {
         waitForElementVisible(locator);
         driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(text);
-
     }
 }
